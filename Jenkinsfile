@@ -9,11 +9,9 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            steps {
-                stage ("aa") {
-                    steps {
-                        sh "echo Building for ${bar}"
-                    }
+            stage ("aa") {
+                steps {
+                    sh "echo Building for ${bar}"
                 }
             }
         }
