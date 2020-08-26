@@ -7,15 +7,18 @@ def generateStage(bar) {
 }
 
 pipeline {
-    agent {
-        docker {
-            image 'ubuntu:latest'
-        }
-    }
+    agent any
     stages {
+        agent {
+            docker {
+                image 'ubuntu:latest'
+            }
+        }
         stage('build') {
             steps {
-                generateStage("build").call()
+                script {
+                    generateStage("build").call()
+                }
             }
         }
     }
