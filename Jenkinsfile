@@ -19,9 +19,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                script {
-                    generateStage("build").call()
-                }
+                generateStage("build").call()
             }
         }
     }
