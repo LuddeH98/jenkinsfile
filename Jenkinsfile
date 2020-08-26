@@ -16,12 +16,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                agent {
-                    node {
-                        generateStage("cool").call()
-                    }
+                script {
+                    generateStage("cool").call()
                 }
-
             }
         }
     }
