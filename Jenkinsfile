@@ -1,4 +1,5 @@
 def generateStage(bar) {
+    docker_agent()
     stage ("${bar}") {
         steps {
             sh "echo Building for ${bar}"
@@ -19,7 +20,7 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            stages {
+            parallel {
                 generateStage("cool")
             }
         }
