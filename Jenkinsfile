@@ -20,7 +20,9 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            generateStage("cool")
+            stages {
+                generateStage("cool")
+            }
         }
     }
 }
