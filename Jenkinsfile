@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
                     parallel (
-                        generateStage("foo")
-                        generateStage("bar")
+                        generateStage("foo"),
+                        generateStage("bar"),
                         generateStage("baz")
                     )
                 }
