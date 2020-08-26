@@ -1,15 +1,12 @@
 def generateStage(bar) {
     return {
-        stage("${bar}") {
-            agent {
-                docker {
-                    image 'ubuntu:latest'
-                }
+        node {
+            docker {
+                image 'ubuntu:latest'
             }
-            steps {
-                sh "echo Building for ${bar}"
-            }
-
+        }
+        steps {
+            sh "echo Building for ${bar}"
         }
     }
 }
