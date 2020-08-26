@@ -3,8 +3,10 @@ def generateStage(bar) {
 }
 
 def docker_agent() {
-    docker {
-        image 'ubuntu:latest'
+    return {
+        docker {
+            image 'ubuntu:latest'
+        }
     }
 }
 
