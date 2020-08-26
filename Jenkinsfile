@@ -18,7 +18,6 @@ pipeline {
                 sh "echo Building for aaa"
             }
         }
-        generateStage("abc")
     }
 }
 
