@@ -9,8 +9,10 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            docker {
-                image 'ubuntu:latest'
+            agent {
+                docker {
+                    image 'ubuntu:latest'
+                }
             }
             stage ("aa") {
                 steps {
