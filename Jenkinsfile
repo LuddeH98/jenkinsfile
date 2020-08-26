@@ -1,6 +1,6 @@
 def generateStage(bar) {
     return {
-        node {
+        agent {
             docker {
                 image 'ubuntu:latest'
             }
