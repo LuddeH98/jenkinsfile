@@ -17,10 +17,9 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            steps {
-                sh 'echo "a"'
+            script {
+                generateStage("cool")
             }
-            
         }
     }
 }
