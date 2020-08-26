@@ -15,7 +15,11 @@ pipeline {
     stages {
         stage('Main') {
             steps {
-                generateStage("abc")
+                generateStage("foo")
+                generateStage("bar")
+                generateStage("baz")
+                generateStage("bez")
+                generateStage("boz")
             }
         }
     }
