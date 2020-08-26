@@ -1,11 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        agent {
-            docker {
-                image 'ubuntu:latest'
-            }
+    agent {
+        docker {
+            image 'ubuntu:latest'
         }
+    }
+    stages {
         stage('build') {
             steps {
                 sh 'echo "Hello there"'
