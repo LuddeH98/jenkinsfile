@@ -14,10 +14,8 @@ pipeline {
                     image 'ubuntu:latest'
                 }
             }
-            stage ("aa") {
-                steps {
-                    sh "echo Building for ${bar}"
-                }
+            steps {
+                sh "echo Building for aaa"
             }
         }
     }
