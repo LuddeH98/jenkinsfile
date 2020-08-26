@@ -2,15 +2,19 @@ def generateStage(bar) {
     sh "echo Building for ${bar}"
 }
 
+def docker_agent() {
+    agent {
+        docker {
+            image 'ubuntu:latest'
+        }
+    }
+}
+
 pipeline {
     agent any
     stages {
         stage('build') {
-            agent {
-                docker {
-                    image 'ubuntu:latest'
-                }
-            }
+            docker_agent()
             steps {
                 generateStage("cool")
             }
