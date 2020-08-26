@@ -11,9 +11,12 @@ def generateStage(bar) {
 }
 pipeline {
     agent any
-    
-    script {
-        generateStage("cool")
+    stages {
+        stage('Main') {
+            steps {
+                generateStage("cool")
+            }
+        }
     }
 }
 
