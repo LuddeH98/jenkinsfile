@@ -1,4 +1,4 @@
-def generateStage(bar) {
+stage generateStage(bar) {
     stage ("${bar}") {
         steps {
             sh "echo Building for ${bar}"
