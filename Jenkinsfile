@@ -1,6 +1,17 @@
 def generateStage(bar) {
     return {
-        stage("Build ${bar}") {
+        script {
+            stage("Build ${bar}") {
+                echo "Building for ${bar}"
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any
+    stages {
+        stage('build') {
             agent {
                 docker {
                     image 'ubuntu:latest'
@@ -10,18 +21,6 @@ def generateStage(bar) {
                 script {
                     generateStage("build").call()
                 }
-            }
-            echo "Building for ${bar}"
-        }
-    }
-}
-
-pipeline {
-    agent any
-    stages {
-        stage('Main') {
-            steps {
-                generateStage("build").call()
             }
         }
     }
