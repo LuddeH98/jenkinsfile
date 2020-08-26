@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Main') {
             steps {
-                stage ("${bar}") {
+                stage ("aa") {
                     steps {
                         sh "echo Building for ${bar}"
                     }
