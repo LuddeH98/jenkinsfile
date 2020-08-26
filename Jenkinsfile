@@ -13,6 +13,11 @@ pipeline {
     agent any
     stages {
         stage('build') {
+            agent {
+                docker {
+                    image 'ubuntu:latest'
+                }
+            }
             generateStage("cool")
         }
     }
