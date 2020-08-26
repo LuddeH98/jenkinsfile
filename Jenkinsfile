@@ -14,7 +14,7 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            steps {
+            parallel {
                 generateStage("foo")
                 generateStage("bar")
                 generateStage("baz")
