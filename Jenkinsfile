@@ -14,9 +14,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                script {
-                    generateStage("cool").call()
-                }
+                generateStage("cool")
             }
         }
     }
