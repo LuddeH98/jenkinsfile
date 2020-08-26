@@ -6,7 +6,9 @@ pipeline {
     }
     stages {
         stage('build') {
-            generateStage("build")
+            steps {
+                generateStage("build")
+            }
         }
     }
 }
