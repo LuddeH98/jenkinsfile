@@ -18,8 +18,6 @@ pipeline {
                 generateStage("foo")
                 generateStage("bar")
                 generateStage("baz")
-                generateStage("bez")
-                generateStage("boz")
             }
         }
     }
