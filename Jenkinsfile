@@ -1,7 +1,7 @@
 def generateStage(bar) {
     return {
         stage("${bar}") {
-            echo "Building for ${bar}"
+            sh "echo Building for ${bar}"
         }
     }
 }
