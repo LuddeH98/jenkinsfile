@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                generateStage("build")
+                generateStage("build").call()
             }
         }
     }
