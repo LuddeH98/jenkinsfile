@@ -9,12 +9,12 @@ def generateStage(bar) {
 pipeline {
     agent any
     stages {
-        agent {
-            docker {
-                image 'ubuntu:latest'
-            }
-        }
         stage('build') {
+            agent {
+                docker {
+                    image 'ubuntu:latest'
+                }
+            }
             steps {
                 script {
                     generateStage("build").call()
