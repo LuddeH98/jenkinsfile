@@ -13,8 +13,9 @@ def docker_agent() {
 pipeline {
     agent any
     stages {
+        docker_agent()
         stage('build') {
-            docker_agent()
+
             steps {
                 generateStage("cool")
             }
