@@ -4,14 +4,17 @@ def generateStage(bar) {
             sh "echo Building for ${bar}"
         }
     }
-
 }
 pipeline {
     agent any
     stages {
         stage('Main') {
             steps {
-                generateStage("cool")
+                stage ("${bar}") {
+                    steps {
+                        sh "echo Building for ${bar}"
+                    }
+                }
             }
         }
     }
