@@ -1,9 +1,4 @@
 def generateStage(bar) {
-    agent {
-        docker {
-            image 'ubuntu:latest'
-        }
-    }
     steps {
         sh "echo Building for ${bar}"
     }
@@ -18,7 +13,9 @@ pipeline {
                     image 'ubuntu:latest'
                 }
             }
-            generateStage("cool")
+            steps {
+                generateStage("cool")
+            }
         }
     }
 }
