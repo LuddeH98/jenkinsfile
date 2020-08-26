@@ -1,7 +1,5 @@
 def generateStage(bar) {
-    steps {
-        sh "echo Building for ${bar}"
-    }
+    sh "echo Building for ${bar}"
 }
 
 pipeline {
