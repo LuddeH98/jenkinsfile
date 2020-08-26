@@ -1,3 +1,11 @@
+def generateStage(bar) {
+    return {
+        stage("Build ${bar}") {
+            echo "Building for ${bar}"
+        }
+    }
+}
+
 pipeline {
     agent {
         docker {
@@ -13,10 +21,3 @@ pipeline {
     }
 }
 
-def generateStage(bar) {
-    return {
-        stage("Build ${bar}") {
-            echo "Building for ${bar}"
-        }
-    }
-}
