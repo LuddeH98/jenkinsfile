@@ -20,10 +20,8 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            steps {
-                script {
-                    generateStage("build").call()
-                }
+            script {
+                generateStage("build").call()
             }
         }
     }
