@@ -1,5 +1,4 @@
 def generateStage(bar) {
-    docker_agent()
     stage ("${bar}") {
         steps {
             sh "echo Building for ${bar}"
