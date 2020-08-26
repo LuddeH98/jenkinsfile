@@ -9,8 +9,8 @@ def generateStage(bar) {
 pipeline {
     agent any
     stages {
+        generateStage("a")
         stage('Main') {
-
             steps {
                 sh "echo Building for aaa"
             }
