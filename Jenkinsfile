@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh 'echo "a"'
             }
-            generateStage("cool")
+            
         }
     }
 }
