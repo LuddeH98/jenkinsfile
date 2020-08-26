@@ -1,8 +1,10 @@
 def generateStage(bar) {
     script {
         node {
-            stage ("${bar}") {
-                sh "echo Building for ${bar}"
+            docker.image('ubuntu:latest').inside {
+                stage ("${bar}") {
+                    sh "echo Building for ${bar}"
+                }
             }
         }
     }
@@ -15,7 +17,6 @@ pipeline {
             steps {
                 generateStage("abc")
             }
-
         }
     }
 }
