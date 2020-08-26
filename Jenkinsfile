@@ -6,9 +6,15 @@ pipeline {
     }
     stages {
         stage('build') {
-            steps {
-                sh 'echo "Hello there"'
-            }
+            generateStage("build")
+        }
+    }
+}
+
+def generateStage(bar) {
+    return {
+        stage("Build ${bar}") {
+            echo "Building for ${bar}"
         }
     }
 }
