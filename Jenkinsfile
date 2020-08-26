@@ -9,7 +9,6 @@ def generateStage(bar) {
             steps {
                 echo "Building for ${bar}"
             }
-
         }
     }
 }
@@ -17,8 +16,11 @@ def generateStage(bar) {
 pipeline {
     agent any
     stages {
-        script {
-            generateStage("build").call()
+        stage('build') {
+                script {
+                    generateStage("cool").call()
+                }
+            }
         }
     }
 }
