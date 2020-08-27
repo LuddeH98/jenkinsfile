@@ -17,6 +17,6 @@ def generateStage2 (bar) {
 
 pipeline {
     agent any
-    generateStage2("aaa")
+    generateStage2("aaa").call()
 }
 
