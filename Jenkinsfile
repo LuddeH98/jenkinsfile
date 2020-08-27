@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Main') {
             steps {
-                generateStage("bar")
+                script {
+                    generateStage("bar")
+                }
             }
         }
     }
