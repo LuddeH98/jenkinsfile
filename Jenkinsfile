@@ -4,7 +4,7 @@ def generateStage(bar) {
     }
 }
 
-def generateStage
+generateStage("bar")
 
 pipeline {
     agent any
@@ -12,7 +12,7 @@ pipeline {
         stage('Main') {
             steps {
                 script {
-                    generateStage("bar")
+                    
                 }
             }
         }
