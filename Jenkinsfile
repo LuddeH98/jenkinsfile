@@ -12,7 +12,7 @@ def generateStage(bar) {
     }
 }
 
-generateStage("bar")
+generateStage("bar").call()
 
 
 
