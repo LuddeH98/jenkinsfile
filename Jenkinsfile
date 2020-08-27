@@ -1,22 +1,19 @@
 def generateStage(bar) {
-    node {
-        docker.image('ubuntu:latest').inside {
-            stage ("${bar}") {
-                sh "echo Building for ${bar}"
-            }
-        }
+    stage ("${bar}") {
+        sh "echo Building for ${bar}"
     }
 }
 
-def generateStage2 (bar) {
-    return stages {
-        stage ("${bar}") {
-        }
-    }
-}
+def generateStage
 
 pipeline {
     agent any
-    generateStage2("aaa")
+    stages {
+        stage('Main') {
+            steps {
+                generateStage("bar")
+            }
+        }
+    }
 }
 
