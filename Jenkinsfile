@@ -8,20 +8,15 @@ def generateStage(bar) {
     }
 }
 
-pipeline {
-    agent any
+def generateStage2 (bar) {
     stages {
-        stage('Main') {
-            steps {
-                script {
-                    parallel (
-                        generateStage("foo"),
-                        generateStage("bar"),
-                        generateStage("baz")
-                    )
-                }
-            }
+        stage ("${bar}") {
         }
     }
+}
+
+pipeline {
+    agent any
+    generateStage2("aaa")
 }
 
