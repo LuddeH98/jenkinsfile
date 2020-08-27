@@ -17,6 +17,10 @@ def generateStage2 (bar) {
 
 pipeline {
     agent any
-    generateStage2("aaa").call()
+    stages {
+        script {
+            generateStage2("aaa")
+        }
+    }
 }
 
