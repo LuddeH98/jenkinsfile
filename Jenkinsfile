@@ -9,7 +9,7 @@ def generateStage(bar) {
 }
 
 def generateStage2 (bar) {
-    stages {
+    return stages {
         stage ("${bar}") {
         }
     }
@@ -17,10 +17,6 @@ def generateStage2 (bar) {
 
 pipeline {
     agent any
-    stages {
-        script {
-            generateStage2("aaa")
-        }
-    }
+    generateStage2("aaa")
 }
 
