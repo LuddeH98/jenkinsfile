@@ -1,10 +1,15 @@
 def foo (name, command) {
     node {
-        checkout scm
-        docker.image("ubuntu:latest").inside {
-            sh "echo '${command}'"
-        }
+        stage {
+            checkout scm
 
+            // Run docker with custom registry
+            // https://www.jenkins.io/doc/book/pipeline/docker/
+
+            docker.image("ubuntu:latest").inside {
+                sh "echo 'Running command: ${command}'"
+            }
+        }
     }
 }
 
