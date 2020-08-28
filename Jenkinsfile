@@ -1,6 +1,5 @@
 def foo (name, command) {
     pipeline {
-        agent any
         stages {
             stage("${name}") {
                 steps {
