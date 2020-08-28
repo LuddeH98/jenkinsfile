@@ -2,7 +2,7 @@ def foo (name, command) {
     node {
         checkout scm
         docker.image("ubuntu:latest").inside {
-            sh "${command}"
+            sh "echo '${command}'"
         }
 
     }
