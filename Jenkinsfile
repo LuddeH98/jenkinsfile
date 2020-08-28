@@ -16,11 +16,16 @@ pipeline {
     stages {
         stage('Main') {
             parallel {
-                stage ("Makefile") {
+                stage ("Unit tests") {
                     steps {
-                        foo("make all")
+                        foo("make unitTest")
                     }
-                }    
+                }
+                stage ("Integration tests") {
+                    steps {
+                        foo("make integrationTest")
+                    }
+                }
             }
         }
     }
