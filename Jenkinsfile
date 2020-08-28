@@ -1,6 +1,6 @@
 def foo (name, command) {
-        dockerNode('ubuntu:latest') {
-            sh "${command}"
+    dockerNode(image: 'ubuntu') {
+        sh "${command}"
     }
 }
 
