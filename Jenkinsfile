@@ -1,4 +1,4 @@
-def foo (command) {
+def jobHandler (command) {
     node {
         checkout scm
 
@@ -18,12 +18,12 @@ pipeline {
             parallel {
                 stage ("Unit tests") {
                     steps {
-                        foo("make unitTest")
+                        jobHandler("make unitTest")
                     }
                 }
                 stage ("Integration tests") {
                     steps {
-                        foo("make integrationTest")
+                        jobHandler("make integrationTest")
                     }
                 }
             }
