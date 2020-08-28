@@ -1,6 +1,6 @@
 def foo (name, command) {
     node {
-        stage ("name") {
+        stage ("${name}") {
             checkout scm
 
             // Run docker with custom registry
