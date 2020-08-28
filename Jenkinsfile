@@ -18,8 +18,13 @@ pipeline {
     stages {
         stage('Main') {
             steps {
-                script {
-                    foo("Makefile", "make all")
+                parallel {
+                    script {
+                        foo("Makefile", "make all")
+                    }
+                    script {
+                        foo("Makefile", "make all")
+                    }
                 }
             }
         }
