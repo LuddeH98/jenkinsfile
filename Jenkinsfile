@@ -1,12 +1,6 @@
 def foo (name, command) {
-    pipeline {
-        stages {
-            stage("${name}") {
-                steps {
-                    sh "${command}"
-                }
-            }
-        }
+        dockerNode('ubuntu:latest') {
+            sh "${command}"
     }
 }
 
