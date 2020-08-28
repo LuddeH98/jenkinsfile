@@ -17,16 +17,12 @@ pipeline {
     agent any
     stages {
         stage('Main') {
-            steps {
-                parallel {
-                    script {
-                        foo("Makefile", "make all")
-                    }
-                    script {
-                        foo("Makefile", "make all")
-                    }
+            parallel {
+                steps {
+                    foo("Makefile", "make all")
                 }
             }
+
         }
     }
 }
