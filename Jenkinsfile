@@ -4,6 +4,7 @@ pipeline {
         stage('Main') {
             steps {
                 script {
+                    sh 'printenv'
                     build job: 'JobPipeline',
                     parameters: [
                         [ $class: 'StringParameterValue', name: 'JOB_NAME', value: 'Makefile'],
